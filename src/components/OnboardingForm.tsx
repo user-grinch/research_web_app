@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { db } from "../services/firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, Check, Heart, PenTool, Cake, User, Shield, Info } from "lucide-react";
+import { ChevronRight, Check, Heart, PenTool, Cake, User, Shield, Info, Activity } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -234,8 +234,8 @@ export default function OnboardingForm({
                   "No personal identifiers are ever linked."
                 ].map((text, i) => (
                   <div key={i} className="flex gap-3 items-start">
-                    <div className="w-5 h-5 rounded-full bg-emerald-400/20 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check size={12} className="text-emerald-400" />
+                    <div className="w-5 h-5 rounded-full bg-brand-secondary/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check size={12} className="text-brand-secondary" />
                     </div>
                     <p className="text-sm text-slate-300 leading-snug">{text}</p>
                   </div>
@@ -272,7 +272,7 @@ export default function OnboardingForm({
             <div 
               key={i} 
               className={`h-1.5 flex-1 rounded-full transition-all duration-700 ease-out ${
-                i <= step ? 'bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.3)]' : 'bg-slate-800'
+                i <= step ? 'bg-brand-secondary shadow-[0_0_10px_rgba(74,222,128,0.3)]' : 'bg-slate-800'
               }`} 
             />
           ))}
